@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP Animation</title>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            text-align: center;
+        }
+        button {
+            border-radius: 20px;
+            padding: 5px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #img img,
+        #img2 img,
+        #img3 img {
+            border: 2px solid black;
+            background-color: red;
+            width: 30%;
+        }
+        #img img {
+            height: 60vh;
+        }
+        #img2 img, #img3 img {
+            height: 30vh;
+            position: absolute;
+            right: 10%;
+        }
+        #img2 img {
+            top: 20vh;
+        }
+        #img3 img {
+            top: 60vh;
+        }
+        #text {
+            position: absolute;
+            top: 30vh;
+            left: 35%;
+            width: 30%;
+            height: 30vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: green;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <table>
+            <tr>
+                <th><h2>THIS IS DIGITAL</h2></th>
+                <th>Services</th>
+                <th>Work</th>
+                <th>About</th>
+                <th>Careers</th>
+                <th><button>Contact Us</button></th>
+            </tr>
+        </table>
+        <div id="img">
+            <img src="https://images.unsplash.com/photo-1732484269142-50a81554221c?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8" alt="Image Description">
+        </div>
+        <div id="img2">
+            <img src="https://images.unsplash.com/photo-1732881280855-1903612a7d68?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0fHx8ZW58MHx8fHx8" alt="Second Image">
+        </div>
+        <div id="img3">
+            <img src="https://images.unsplash.com/photo-1734197294272-71acf8e2ae79?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2fHx8ZW58MHx8fHx8" alt="Third Image">
+        </div>
+        <div id="text">WELCOME TO 2025 <br>
+            SAY HAPPY NEW YEAR
+        </div>
+    </div>
+    
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        // Animate images on load
+        gsap.from("#img img", { duration: 1, opacity: 0, y: -50 });
+        gsap.from("#img2 img", { duration: 1, opacity: 0, x: 100, delay: 0.5 });
+        gsap.from("#img3 img", { duration: 1, opacity: 0, x: 100, delay: 1 });
+        
+        // Animate text
+        gsap.from("#text", { duration: 1.5, opacity: 0, scale: 0.5, delay: 1.5 });
+    </script>
+</body>
+</html>

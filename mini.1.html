@@ -1,0 +1,54 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="></script> -->
+    <style>
+        body{
+            text-align: center;
+        }
+        button{
+            padding: 10px 16px;
+              border: 1px solid grey;
+              border-radius: 4px;
+              cursor: pointer;
+              text-align: center;
+             background-color: blueviolet;
+        }
+    </style>
+ </head>
+ <body>
+    <h1>counter app</h1>
+    <hr>
+    <h1 class="count">0</h1>
+    <button class="minus-btn">-</button>
+    <button class="plus-btn">+</button>
+    <div>increament/decreamennt by</div> <input type="number" name="" class="changeBy" value="1">
+    <button class="reset-btn">reset</button>
+   
+    <script>const count=document.querySelector('.count')
+        const minusbtn=document.querySelector('.minus-btn')
+        const plusbtn=document.querySelector('.plus-btn')
+        const changeBy=document.querySelector('.changeBy')
+        const resetbtn=document.querySelector('.reset-btn')
+
+        minusbtn.addEventListener('click',()=>{
+            const countvalue=parseInt(count.innerHTML)
+            const changeByvalue=parseInt(changeBy.value)
+         count.innerHTML=countvalue-changeByvalue;
+        })
+        plusbtn.addEventListener('click',()=>{
+            const countvalue=parseInt(count.innerHTML)
+            const changeByvalue=parseInt(changeBy.value)
+         count.innerHTML=countvalue+changeByvalue;
+        //  count.innerHTML=countvalue+1;
+        })
+        resetbtn.addEventListener('click',()=>{
+            count.innerText=0;
+        })
+        </script>
+ </body>
+ </html>

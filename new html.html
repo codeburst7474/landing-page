@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+           font-size: 30px;
+           font-family: fantasy;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+
+        }
+        #box{
+            height: 300px;
+            width: 300px;
+            background-color: slateblue;
+            border: 2px solid black;
+
+        }
+        #box::before{
+            content:"❤️";
+        }
+        #box::after{
+            content: "👌";
+        }
+        #button{
+            padding: 8px 20px;
+         font-size: 20px;
+         border: none;
+         background-color: rgb(137, 137, 234);
+         color: wheat;
+         position: absolute;
+         top: 50%;
+         left:50% ;
+         transform: translate(-50%,-50 );
+
+        }
+        button::before{
+            content: "lolo";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: pink;
+            top:  0;
+            position: 0;
+            z-index: -1;
+        }
+        button:hover::before{
+transform: scale(1.4);
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+<div id="button">button</div>
+    </div>
+</body>
+</html>

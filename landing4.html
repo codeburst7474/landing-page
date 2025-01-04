@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Socks</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fbeff3;
+            overflow-x: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .header {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #000;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            background: #000;
+            bottom: -5px;
+            left: 0;
+        }
+
+        .button-group {
+            margin-bottom: 40px;
+        }
+
+        .button-group button {
+            background: #fff;
+            border: 2px solid #000;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .button-group button:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        .main-content {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .main-content img {
+            width: 250px;
+            border-radius: 15px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+            margin: 0 10px;
+        }
+
+        .main-circle {
+            width: 600px;
+            height: 300px;
+            background: #b7e4f7;
+            position: absolute;
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .explore-button {
+            margin-top: 30px;
+            background: #c2f0c1;
+            border: none;
+            border-radius: 20px;
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #000;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .explore-button:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Happy Socks</div>
+
+        <div class="button-group">
+            <button>Happy Socks</button>
+            <button>Colorful</button>
+            <button>Website</button>
+            <button>Sales</button>
+            <button>Interaction</button>
+            <button>Concept</button>
+        </div>
+
+        <div class="main-content">
+            <div class="main-circle"></div>
+            <img src="https://via.placeholder.com/250" alt="Sock 1">
+            <img src="https://via.placeholder.com/250" alt="Sock 2">
+            <img src="https://via.placeholder.com/250" alt="Sock 3">
+        </div>
+
+        <button class="explore-button">Explore</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP Animation</title>
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        .main {
+            width: 80%;
+            height: 80%;
+            position: relative;
+            overflow: hidden;
+        }
+        .frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0; /* Start invisible */
+        }
+        .frame img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .frame h2 {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 2rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="frame" id="one">
+            <img src="https://images.unsplash.com/photo-1734197294272-71acf8e2ae79?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2fHx8ZW58MHx8fHx8" alt="">
+            <h2>Welcome</h2>
+        </div>
+        <div class="frame" id="two">
+            <img src="https://images.unsplash.com/photo-1731596691186-631e1fc65acd?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMXx8fGVufDB8fHx8fA%3D%3D" alt="">
+            <h2>To</h2>
+        </div>
+        <div class="frame" id="three">
+            <img src="https://images.unsplash.com/photo-1733064515562-be3d5f1e6f76?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMnx8fGVufDB8fHx8fA%3D%3D" alt="">
+            <h2>2025</h2>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        // GSAP animation
+        const frames = document.querySelectorAll('.frame');
+        const timeline = gsap.timeline({ repeat: -1, repeatDelay: 1 }); // Infinite loop with delay
+
+        frames.forEach((frame, index) => {
+            timeline.to(frame, { duration: 1, opacity: 1, zIndex: 1 })
+                    .to(frame, { duration: 1, opacity: 0, zIndex: 0 }, "+=2"); // Stay visible for 2 seconds
+        });
+    </script>
+</body>
+</html>
